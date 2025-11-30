@@ -1,0 +1,28 @@
+name: AoC 2025 minimal build
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Verify build tools
+        run: |
+          cmake --version
+          ninja --version
+
+      - name: Build
+        run: |
+          mkdir -p build
+          cd build
+          cmake -G Ninja ..
+          ninja

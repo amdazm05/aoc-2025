@@ -14,4 +14,5 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_CMAKE_MOD_DIR})
 
 # Adds submodules to build
 add_subdirectory(${CONTRIB_DIR}/catch2)
+add_subdirectory(${PROJECT_SRC_DIR})
 

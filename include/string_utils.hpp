@@ -25,7 +25,7 @@ namespace string_helpers {
                 throw std::runtime_error("File opening error!: Check if Path is correct"); 
             }
 
-            for (std::string res; std::getline(fs,res,delim)) {
+            for (std::string res; std::getline(fs,res,delim);) {
                 result.push_back(res);
             }
         }

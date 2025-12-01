@@ -1,4 +1,4 @@
-name: AoC 2025 minimal build
+name: AoC 2025 CI
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  build-run-days:
     runs-on: self-hosted
 
     steps:
@@ -20,9 +20,12 @@ jobs:
           cmake --version
           ninja --version
 
-      - name: Build
+      - name: Build and run cases
         run: |
           mkdir -p build
           cd build
           cmake -G Ninja ..
           ninja
+          cd tests
+          ls
+          ./day1 --input day1_default.in -s

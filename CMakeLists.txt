@@ -7,6 +7,7 @@ set(CONTRIB_DIR ${PROJECT_DIR}/contrib)
 set(PROJECT_INCLUDE_DIR ${PROJECT_DIR}/include)
 set(PROJECT_SRC_DIR ${PROJECT_DIR}/src)
 set(PROJECT_TEST_DIR ${PROJECT_DIR}/tests)
+set(PROJECT_INPUT_DIR ${PROJECT_DIR}/in)
 set(PROJECT_CMAKE_MOD_DIR ${PROJECT_DIR}/cmake)
 set(COMPILER_CXX_VERSION cxx_std_23)
 
@@ -17,4 +18,5 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_CMAKE_MOD_DIR})
 add_subdirectory(${CONTRIB_DIR}/catch2)
 add_subdirectory(${PROJECT_SRC_DIR})
 add_subdirectory(${PROJECT_TEST_DIR})
+add_subdirectory(${PROJECT_INPUT_DIR})
 

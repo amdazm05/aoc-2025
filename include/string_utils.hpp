@@ -37,6 +37,17 @@ namespace string_helpers {
         }
         return result;
     }
+
+    std::vector<uint64_t> get_list_seperated_with_delim (const std::string & input,char delim=',') {
+        std::istringstream in;
+        std::vector<uint64_t> res;
+        in.str(input);
+
+        for (std::string s; std::getline(in,s,delim);) {
+            res.emplace_back(std::stoll(s));
+        }
+        return std::move(res);
+    }
 };
 
 #endif /* FILE_UTILS */

@@ -29,3 +29,4 @@ jobs:
           cd tests
           ls
           ./day1 --input day1_default.in -s
+          ./day2 --input day2_default.in -s

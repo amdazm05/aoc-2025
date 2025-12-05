@@ -1,6 +1,8 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_session.hpp>
 #include <string_utils.hpp>
+#include <helper_macros.hpp>
+
 #include <unordered_map>
 
 using namespace string_helpers;
@@ -58,23 +60,4 @@ TEST_CASE( "day1", "day1" ) {
     CHECK(true);
 }
 
-int main(int argc, char* argv[]) {
-    Catch::Session session;
-
-    using namespace Catch::Clara;
-
-    auto cli =
-        session.cli()
-        | Opt(global_test_input_path, "file")
-            ["--input"]
-            ("input file for test");
-
-    session.cli(cli);
-
-    int returnCode = session.applyCommandLine(argc, argv);
-    if (returnCode != 0)
-        return returnCode;
-
-    // global_test_input_path now holds your file
-    return session.run();
-}
+AOC_MAIN(global_test_input_path)

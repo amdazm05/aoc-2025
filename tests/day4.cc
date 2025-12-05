@@ -1,6 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_session.hpp>
 #include <string_utils.hpp>
+#include <helper_macros.hpp>
 
 using namespace string_helpers;
 std::string global_test_input_path;
@@ -83,25 +84,7 @@ TEST_CASE( "day4", "day4" ) {
 }
 
 
-int main(int argc, char* argv[]) {
-    Catch::Session session;
-
-    using namespace Catch::Clara;
-
-    auto cli =
-        session.cli()
-        | Opt(global_test_input_path, "file")
-            ["--input"]
-            ("input file for test");
-
-    session.cli(cli);
-
-    int returnCode = session.applyCommandLine(argc, argv);
-    if (returnCode != 0)
-        return returnCode;
-
-    return session.run();
-}
+AOC_MAIN(global_test_input_path)
 
 
 //@@@

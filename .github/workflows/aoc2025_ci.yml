@@ -32,3 +32,4 @@ jobs:
           ./day2 --input day2_default.in -s
           ./day3 --input day3_default.in -s
           ./day4 --input day4_default.in -s
+          ./day5 --input day5_default.in -s

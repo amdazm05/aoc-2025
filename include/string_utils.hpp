@@ -44,10 +44,23 @@ namespace string_helpers {
         in.str(input);
 
         for (std::string s; std::getline(in,s,delim);) {
+            if(s.empty()) continue;
             res.emplace_back(std::stoll(s));
         }
         return std::move(res);
     }
+
+    std::vector<std::string> get_list_seperated_with_delim_st (const std::string & input,char delim=',') {
+        std::istringstream in;
+        std::vector<std::string> res;
+        in.str(input);
+
+        for (std::string s; std::getline(in,s,delim);) {
+            if(s.empty()) continue;
+            res.emplace_back(s);
+        }
+        return std::move(res);
+    }    
 };
 
 #endif /* FILE_UTILS */
